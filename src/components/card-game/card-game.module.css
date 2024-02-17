@@ -1,0 +1,29 @@
+.drawCardRow {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.drawCardBox {
+    width: 120px;
+    height: 180px;
+    background-color: lightgray;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.drawCardAlert {
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.cardGameContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

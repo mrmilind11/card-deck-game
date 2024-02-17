@@ -1,0 +1,25 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+    max-width: 120px;
+    height: 180px;
+    font-size: 1.5rem;
+}
+
+.cardRed {
+    color: red;
+}
+
+.cardBlack {
+    color: black;
+}
+
+.cardFace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
