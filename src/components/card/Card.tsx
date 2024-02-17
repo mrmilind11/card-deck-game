@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import {CardColor, CardData, CardFaceIcons} from "../../hooks/useCardDraw.ts";
 import styles from './card.module.css';
+import {CardColor, CardData, CardFaceIcons} from "../../constants/card.constants.ts";
 
 interface CardProps {
     cardData: CardData;

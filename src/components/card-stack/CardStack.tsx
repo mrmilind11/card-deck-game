@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import styles from './card-stack.module.css';
-import {CardData} from "../../hooks/useCardDraw.ts";
 import {Card} from "../card/Card.tsx";
+import {CardData} from "../../constants/card.constants.ts";
 
 interface CardStackProps {
     cards: CardData[];

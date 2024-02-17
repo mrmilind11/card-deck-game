@@ -1,7 +1,8 @@
 import {FC, useState} from 'react';
 import styles from './card-game.module.css';
-import {CardData, useCardDraw} from "../../hooks/useCardDraw.ts";
+import {useCardDraw} from "../../hooks/useCardDraw.ts";
 import {CardStack} from "../card-stack/CardStack.tsx";
+import {CardData} from "../../constants/card.constants.ts";
 
 const DRAW_COUNT = 5;
 
@@ -13,7 +14,7 @@ export const CardGame: FC = () => {
     const handleDrawCards = () => {
         try {
             const drawnCards = drawCards(DRAW_COUNT);
-            setSelectedCards((state) => [...state, ...drawnCards]);
+            setSelectedCards((state) => [...drawnCards, ...state]);
         } catch (e) {
             alert(e);
         }
@@ -32,10 +33,11 @@ export const CardGame: FC = () => {
                     <p>Draw Cards</p>
                 </div>
                 {
-                    cards.length < DRAW_COUNT && (<div className={styles.drawCardAlert}>Alert !! Not enough cards to draw</div>)
+                    cards.length < DRAW_COUNT && (
+                        <div className={styles.drawCardAlert}>Alert !! Not enough cards to draw</div>)
                 }
             </div>
-            <hr/>
+            {selectedCards.length > 0 && <hr/>}
             <CardStack cards={selectedCards} onSelect={putCardBack}/>
         </div>
     )

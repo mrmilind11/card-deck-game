@@ -1,34 +1,5 @@
-import {useEffect, useState} from "react";
-
-enum CardFace {
-    HEARTS = 'hearts',
-    DIAMONDS = 'diamonds',
-    CLUBS = 'clubs',
-    SPADES = 'spades',
-}
-
-export const CardFaceIcons: Record<CardFace, string> = {
-    [CardFace.HEARTS]: '♥️',
-    [CardFace.DIAMONDS]: '♦️',
-    [CardFace.CLUBS]: '♣️',
-    [CardFace.SPADES]: '♠️',
-}
-
-export const CardColor: Record<CardFace, 'black' | 'red'> = {
-    [CardFace.HEARTS]: 'red',
-    [CardFace.DIAMONDS]: 'red',
-    [CardFace.CLUBS]: 'black',
-    [CardFace.SPADES]: 'black'
-}
-
-type CardValueType = 'A' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'J' | 'Q' | 'K';
-
-const CardValues: CardValueType[] = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-
-export type CardData = {
-    face: CardFace,
-    value: CardValueType
-}
+import {useState} from "react";
+import {CardData, CardFace, CardValues} from "../constants/card.constants.ts";
 
 const getAllCards = (): CardData[] => {
     return [CardFace.CLUBS, CardFace.DIAMONDS, CardFace.HEARTS, CardFace.SPADES].reduce((acc, current) => {
@@ -53,10 +24,6 @@ export const useCardDraw = () => {
         cards.splice(randomIndex, 0, card);
         setCards([...cards]);
     }
-
-    useEffect(() => {
-        console.log('cards', cards);
-    }, [cards]);
 
     return {
         cards,
