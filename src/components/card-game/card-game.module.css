@@ -15,6 +15,13 @@
     cursor: pointer;
 }
 
+.drawCardAvailable {
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: steelblue;
+}
+
 .drawCardAlert {
     color: white;
     border-radius: 0.25rem;

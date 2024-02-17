@@ -33,8 +33,9 @@ export const CardGame: FC = () => {
                     <p>Draw Cards</p>
                 </div>
                 {
-                    cards.length < DRAW_COUNT && (
-                        <div className={styles.drawCardAlert}>Alert !! Not enough cards to draw</div>)
+                    cards.length < DRAW_COUNT ? (
+                        <div className={styles.drawCardAlert}>Alert !! Not enough cards to draw</div>
+                    ): <div className={styles.drawCardAvailable}>Available Cards {cards.length}</div>
                 }
             </div>
             {selectedCards.length > 0 && <hr/>}

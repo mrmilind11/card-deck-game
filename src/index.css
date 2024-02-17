@@ -29,6 +29,7 @@ body {
 
 #root {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     flex-grow: 1;
     margin: 0 auto;
